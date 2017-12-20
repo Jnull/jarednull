@@ -33,7 +33,8 @@
     "react-dom": "*",
     "react-router": "*",
     "react-router-dom": "*",
-    "webpack": "*"
+    "webpack": "*",
+    "yarn": "^1.3.2"
   },
   "devDependencies": {
     "compression-webpack-plugin": "^1.1.2",
