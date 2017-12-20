@@ -1,9 +1,8 @@
-var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 
 module.exports = {
   context: __dirname + "/src",
-  devtool: debug ? "inline-sourcemap" : false,
+  devtool: false,
   entry: "./js/client.js",
   module: {
     rules: [
@@ -22,7 +21,11 @@ module.exports = {
     path: __dirname + "/src/",
     filename: "client.min.js"
   },
-  plugins: debug ? [] : [
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false })
+  plugins:[
+    new webpack.DefinePlugin({
+  'process.env.NODE_ENV': JSON.stringify('production')
+}),
+    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: true,  ecma: 8
+ })
   ]
 };
