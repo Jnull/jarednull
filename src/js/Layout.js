@@ -78,6 +78,7 @@ const Home = () => (
 const News = () => (
   <div>
     News
+    <p>Let me win!</p>
   </div>
 )
 
