@@ -1,4 +1,3 @@
-//This is needed for all react files?
 import React from "react";
 import Radium from 'radium';
 import {  HashRouter as Router,  Route,  Link} from 'react-router-dom'
@@ -69,62 +68,93 @@ const MainNav = () => (
       <div style={navStyle}>
         <ul style={menuNavStyle}>
           <Link to="/news"><button style={menuNavListItemStyle}>News</button></Link>
+          <Link to="/media"><button style={menuNavListItemStyle}>Media</button></Link>
           <Link to="/projects"><button style={menuNavListItemStyle}>Projects</button></Link>
-          <Link to="/about"><button style={menuNavListItemStyle}>About</button></Link>
-          <Link to="/contact"><button style={menuNavListItemStyle}>Contact Me</button></Link>
           <Link to="/webapps"><button style={menuNavListItemStyle}>WebApps</button></Link>
+          <Link to="/resources"><button style={menuNavListItemStyle}>Resources</button></Link>
+          <Link to="/about"><button style={menuNavListItemStyle}>About</button></Link>
+          <Link to="/contact"><button style={menuNavListItemStyle}>Contact</button></Link>
         </ul>
       </div>
       <Route exact path="/" component={Home}/>
       <Route  path="/news" component={News}/>
+      <Route  path="/media" component={Media}/>
       <Route path="/projects" component={Projects}/>
+      <Route path="/webapps" component={WebApps}/>
+      <Route path="/resources" component={Resources}/>
       <Route path="/about" component={About}/>
       <Route path="/contact" component={Contact}/>
-      <Route path="/webapps" component={WebApps}/>
     </div>
   </Router>
 )
+
+const sectionHeaderStyle = {
+color: 'blue',
+marginLeft: '20px',
+fontSize: '20px',
+borderInlineEndWidth: '5px'
+}
+const introStyle = {
+color: 'blue',
+marginLeft: '40px',
+fontSize: '14px',
+borderInlineEndWidth: '5px'
+}
 const Home = () => (
   <div>
     Homeaaaa
-  </div>
+      </div>
 )
 
 const News = () => (
   <div>
-    News
-    <p>Let me win!</p>
+    <h1 style={sectionHeaderStyle}>News</h1>
+  </div>
+)
+
+const Media = () => (
+  <div>
+    <h1 style={sectionHeaderStyle}>Media</h1>
   </div>
 )
 
 const Projects = () => (
   <div>
-    Projects
-  </div>
-)
-
-const About = () => (
-  <div>
-    About
-  </div>
-)
-
-const Contact = () => (
-  <div>
-    Contact
+    <h1 style={sectionHeaderStyle}>Projects</h1>
   </div>
 )
 
 const WebApps = () => (
   <div>
-    WebApps
+    <h1 style={sectionHeaderStyle}>WebApps</h1>
   </div>
 )
 
+const Resources = () => (
+  <div>
+    <h1 style={sectionHeaderStyle}>Resources</h1>
+  </div>
+)
+
+const About = () => (
+  <div>
+    <h1 style={sectionHeaderStyle}>About</h1>
+  </div>
+)
+
+const Contact = () => (
+  <div>
+    <h1 style={sectionHeaderStyle}>Contact</h1>
+  </div>
+)
+
+
+
 const menuNavListItemStyle =  {
 height: '30px',
-borderRadius: '10px',
+borderRadius: '6px 0px 6px 0px',
 }
+
 
 const menuNavStyle =  {
 display: 'flex',
