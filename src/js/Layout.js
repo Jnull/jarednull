@@ -16,8 +16,11 @@ export default class Layout extends React.Component {
               <meta charSet='utf-8'/>
               <title>Jared Null</title>
             </div>
-            <div style={headerBodySeparatorStyle}></div>
+            <div style={headerBodySeparatorStyle}/>
             <MainNav />
+            <footer style={footerStyle}>
+              <div style={styleFooterBarStyle}>footer</div>
+            </footer>
           </div>
               );
     }
@@ -48,6 +51,18 @@ const quoteStyle = {
 const navStyle = {
     backgroundColor: 'rgb(110, 110, 208)'
 }
+
+const footerStyle = {
+    backgroundColor: 'rgb(110, 110, 208)'
+}
+const styleFooterBarStyle = {
+    backgroundColor: 'rgb(110, 110, 1)',
+    position: 'absolute',
+    right: '0',
+    bottom: '0',
+    left: '0',
+    height: '2em'
+}
 const MainNav = () => (
   <Router>
     <div>
@@ -71,7 +86,7 @@ const MainNav = () => (
 )
 const Home = () => (
   <div>
-    Home
+    Homeaaaa
   </div>
 )
 
@@ -116,4 +131,5 @@ display: 'flex',
 flexWrap: 'nowrap',
 flexDirection: 'row',
 justifyContent: 'right',
+justifyContent: 'flex-end',
 }
