@@ -9,36 +9,34 @@ export default class Layout extends React.Component {
     render() {
         return (
           <div>
-            <div style={headerStyle}>
-              Jared Null
-              <link rel='icon' href='favicon.ico'/>
-              <meta charSet='utf-8'/>
-              <title>Jared Null</title>
-            </div>
-            <div style={headerBodySeparatorStyle}/>
+            <link rel='icon' href='favicon.ico'/>
+            <meta charSet='utf-8'/>
+            <title>Jared Null</title>
             <MainNav />
             <footer style={footerStyle}>
-              <div style={styleFooterBarStyle}>footer</div>
+              <div style={styleFooterBarStyle}>Null 2018</div>
             </footer>
           </div>
               );
     }
 }
-Layout = Radium(Layout);  //Takes Inline Styles
 const bannerStyle = {
 }
 const headerStyle = {
+      display: 'block',
       background: 'linear-gradient(to left, teal , white)',
       textAlign: 'right',
       fontSize: '80px',
       fontFamily: 'Delicious',
       padding: '5px 20px 0px 5px',
       color: 'rgb(144, 26, 26)',
-      lineHeight: '1.14'
+      lineHeight: '1.14',
+      width: '100%'
 }
 const headerBodySeparatorStyle = {
       backgroundImage: 'radial-gradient(rgb(177, 21, 21) 20%, black 65%, black 40%)',
-      height: '10px'
+      height: '10px',
+
 }
 const quoteStyle = {
   fontSize: '35px',
@@ -48,24 +46,30 @@ const quoteStyle = {
 }
 
 const navStyle = {
-    backgroundColor: 'rgb(110, 110, 208)'
+    backgroundColor: 'rgb(110, 110, 208)',
+    borderBottom: '1px solid black'
 }
 
 const footerStyle = {
-    backgroundColor: 'rgb(110, 110, 208)'
 }
 const styleFooterBarStyle = {
+    display: 'flex',
     backgroundColor: 'rgb(110, 110, 1)',
     position: 'absolute',
     right: '0',
     bottom: '0',
     left: '0',
-    height: '2em'
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'red',
+    fontSize: '16'
 }
 const MainNav = () => (
   <Router>
     <div>
-      <div style={navStyle}>
+      <Link  id='test' to='/' style={headerStyle}>Jared Null</Link>
+      <div style={headerBodySeparatorStyle}/>
+      <div id='test2' style={navStyle}>
         <ul style={menuNavStyle}>
           <Link to="/news"><button style={menuNavListItemStyle}>News</button></Link>
           <Link to="/media"><button style={menuNavListItemStyle}>Media</button></Link>
@@ -102,10 +106,24 @@ borderInlineEndWidth: '5px'
 }
 const Home = () => (
   <div>
-    Homeaaaa
-      </div>
-)
+    <h1 style={sectionHeaderStyle}>Home</h1>
+    <div style={homeMainStyle}>
+      <Link to='/media'><h1>Media</h1></Link>
+      <ol>
+        <li><a href="https://www.whitehatsec.com/blog/browser-wars-to-browser-foes-ms13-069/">Browser Wars written by Jared Null</a></li>
+      </ol>
+      <Link to='/media'><h1>Projects</h1></Link>
+      <Link to='/media'><h1>WebApps</h1></Link>
+      <Link to='/media'><h1>Resources</h1></Link>
+      <Link to='/media'><h1>About</h1></Link>
+      <Link to='/media'><h1>Contact</h1></Link>
+    </div>
+  </div>
+    )
 
+const  homeMainStyle = {
+  marginLeft: '35px',
+}
 const News = () => (
   <div>
     <h1 style={sectionHeaderStyle}>News</h1>
@@ -115,6 +133,9 @@ const News = () => (
 const Media = () => (
   <div>
     <h1 style={sectionHeaderStyle}>Media</h1>
+    <ol>
+      <li><a href="https://www.whitehatsec.com/blog/browser-wars-to-browser-foes-ms13-069/">Browser Wars written by Jared Null</a></li>
+    </ol>
   </div>
 )
 
@@ -178,14 +199,25 @@ const Resources = () => (
         <li>Hacker's Playbook</li>
         <li>Hacking Exposed</li>
       </ol>
+      <h1>Links</h1>
+      <ol>
+        <li><a href="http://gamefans.ca">Gamefans - Chiprunner</a></li>
+        <li><a href="https://learningnerd.com">Liz Krane</a></li>
+        <li><a href="https://www.geshl2.com">Golden Eye: Source</a></li>
+      </ol>
     </div>
   </div>
 )
 
 const resourcesMainStyle  = {
-  marginLeft: '35px'
+  display: 'flex',
+  flexDirection: 'column',
+  flexWrap: 'enabled',
+  marginLeft: '35px',
+  justifyContent: 'center',
+  listStylePosition: 'inside',
+  listStyle: 'none'
 }
-
 
 const About = () => (
   <div>
@@ -223,3 +255,5 @@ flexDirection: 'row',
 justifyContent: 'right',
 justifyContent: 'flex-end',
 }
+
+Layout = Radium(Layout);  //Takes Inline Styles
